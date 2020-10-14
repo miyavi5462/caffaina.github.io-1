@@ -1,72 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
+    rel="stylesheet">
   <style>
-    body{
-      font-family: 'Noto Serif TC', serif;
+    body {
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
     }
 
-    h1{
-      font-size: 80px;
-      font-weight: 400;
+    .sixAngle {
+      height: 520px;
+      width: 600px;
+      clip-path: url(#slideMask);
+      position: relative;
     }
 
-    h2{
-      font-size: 60px;
-      font-weight: 300;
-    }
+    .background {
 
-    h3{
-      font-size: 36px;
-      font-weight: 300;
-    }
 
-    h4{
-      font-size: 26px;
-      font-weight: 600;
-    }
+      background-image: url("https://placem.at/place?w=1920&h=1080&txt=0");
+      background-position: center;
+      width: 100vw;
+      height: 100vh;
 
-    h5{
-      font-size: 20px;
-      font-weight: 600;
-    }
+      transform: scale(1.2, 1.2);
 
-    p{
-      font-size: 14px;
-      font-weight: 300;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
     }
   </style>
 </head>
+
 <body>
-
-<h1>
-  h1 頁面標題 Noto Serif CJK TC / 思源宋體 / Regular / 80px
-</h1>
-
-<h2>
-  h2 段落題 Noto Serif CJK TC / 思源宋體 / Light / 60px
-</h2>
-
-<h3>
-  h3 小節標題 Noto Serif CJK TC / 思源宋體 / Light / 36px
-</h3>
-  
-<h4>
-  h4 Noto Serif CJK TC / 思源宋體 / Semibold /26
-</h4>
-
-<h5>
-  h5 Noto Serif CJK TC / 思源宋體 / Semibold /20
-</h5>
-
-<P>
-  P 內文 Noto Serif CJK TC / 思源宋體 / Light / 14px
-</P>
-
-
+  <svg width="0" height="0" class="slideMask" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <clipPath id="slideMask">
+      <path fill="none"
+        d="M519.61523,450V150L259.80762,0,0,150V450L259.80762,600ZM48.49744,422V178L259.80762,56,471.11786,178V422L259.80762,544Z">
+      </path>
+    </clipPath>
+  </svg>
+  <div class="sixAngle">
+    <div class="background"></div>
+  </div>
 </body>
+
 </html>
