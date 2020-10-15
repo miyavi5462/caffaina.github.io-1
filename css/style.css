@@ -349,6 +349,13 @@ main .swiper-container .swiper-slide .subnav_container .sixAngle {
   margin-bottom: 30px;
 }
 
+@media (max-width: 1440px) {
+  main .swiper-container .swiper-slide .subnav_container .sixAngle {
+    -webkit-clip-path: url(#pc-small);
+            clip-path: url(#pc-small);
+  }
+}
+
 main .swiper-container .swiper-slide .subnav_container .sixAngle .sixAngle_background {
   height: calc(100vh - 72px);
   width: 100vw;

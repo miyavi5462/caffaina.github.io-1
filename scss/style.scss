@@ -320,7 +320,9 @@ main {
                     z-index: index($elements, sixAngle);
 
                     margin-bottom: $space-medium;
-
+                    @include pc-small{
+                        clip-path: url(#pc-small);
+                    }
                     .sixAngle_background {
                         height: calc(100vh - #{$header-hight});
                         width: 100vw;
