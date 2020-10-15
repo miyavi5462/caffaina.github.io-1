@@ -72,6 +72,7 @@ p {
   font-family: "Noto Sans TC", sans-serif;
 }
 
+/* index 宣告 */
 /* CSS */
 header {
   height: 72px;
@@ -343,8 +344,8 @@ main .swiper-container .swiper-slide .subnav_container .textbox_container .subna
 main .swiper-container .swiper-slide .subnav_container .sixAngle {
   height: 600px;
   width: 520px;
-  -webkit-clip-path: url(#slideMask);
-          clip-path: url(#slideMask);
+  -webkit-clip-path: url(#pc);
+          clip-path: url(#pc);
   z-index: 6;
   margin-bottom: 30px;
 }
@@ -353,6 +354,17 @@ main .swiper-container .swiper-slide .subnav_container .sixAngle {
   main .swiper-container .swiper-slide .subnav_container .sixAngle {
     -webkit-clip-path: url(#pc-small);
             clip-path: url(#pc-small);
+    height: 416px;
+    width: 360px;
+  }
+}
+
+@media (max-width: 1024px) {
+  main .swiper-container .swiper-slide .subnav_container .sixAngle {
+    -webkit-clip-path: url(#laptop);
+            clip-path: url(#laptop);
+    height: 289px;
+    width: 250px;
   }
 }
 

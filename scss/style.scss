@@ -18,7 +18,7 @@ $space-X-large: 160px;
         @content;
     }
 }
-@mixin Laptop {
+@mixin laptop {
     @media (max-width: 1024px) {
         @content;
     }
@@ -106,6 +106,10 @@ p {
     margin: 0;
     font-family: "Noto Sans TC", sans-serif;
 }
+
+/* index 宣告 */
+// textbox_container
+// pc-small
 
 /* CSS */
 
@@ -316,12 +320,19 @@ main {
                     // 六角形
                     height: 600px;
                     width: 520px;
-                    clip-path: url(#slideMask);
+                    clip-path: url(#pc);
                     z-index: index($elements, sixAngle);
 
                     margin-bottom: $space-medium;
                     @include pc-small{
                         clip-path: url(#pc-small);
+                        height: 416px;
+                        width: 360px;
+                    }
+                    @include laptop{
+                        clip-path: url(#laptop);
+                        height: 289px;
+                        width: 250px;
                     }
                     .sixAngle_background {
                         height: calc(100vh - #{$header-hight});
