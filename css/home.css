@@ -453,4 +453,16 @@ main .swiper-container .swiper-slide > .background.hover {
   -webkit-transform: scale(1.15, 1.15);
           transform: scale(1.15, 1.15);
 }
+
+main .swiper-container .swiper-button-next::after {
+  content: "123";
+  font-family: 思源黑體;
+  font-size: 12px;
+  text-transform: none !important;
+  letter-spacing: 0;
+  text-transform: none;
+  font-variant: initial;
+  line-height: 1;
+  color: #ffffff;
+}
 /*# sourceMappingURL=home.css.map */
