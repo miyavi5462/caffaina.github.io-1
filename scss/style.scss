@@ -107,9 +107,17 @@ p {
     font-family: "Noto Sans TC", sans-serif;
 }
 
-/* index 宣告 */
-// textbox_container
+// sixAngle-size
+
+// pc
+$sixAngle-pc-height:600px;
+$sixAngle-pc-width:520px;
 // pc-small
+$sixAngle-pc-small-height:416px;
+$sixAngle-pc-small-width:360px;
+//laptop
+$sixAngle-laptop-height:289px;
+$sixAngle-laptop-width:250px;
 
 /* CSS */
 
