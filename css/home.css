@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* 宣告 */
 /* reset */
 * {
   -webkit-box-sizing: border-box;
@@ -72,8 +71,6 @@ p {
   font-family: "Noto Sans TC", sans-serif;
 }
 
-/* index 宣告 */
-/* CSS */
 header {
   height: 72px;
   width: 100vw;
@@ -82,13 +79,12 @@ header {
 header .wapper {
   height: 72px;
   width: 100%;
-  min-width: 1280px;
   background-color: #0c3141;
   padding: 0 150px;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 4;
+  z-index: 1030;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -170,8 +166,8 @@ header .wapper nav ul li a p {
   height: 100%;
   color: rgba(255, 255, 255, 0.35);
   position: relative;
-  -webkit-transition: 0.3s cubic-bezier(0.19, 0.77, 0.28, 0.9);
-  transition: 0.3s cubic-bezier(0.19, 0.77, 0.28, 0.9);
+  -webkit-transition: 0.2s cubic-bezier(0.19, 0.77, 0.28, 0.9);
+  transition: 0.2s cubic-bezier(0.19, 0.77, 0.28, 0.9);
 }
 
 header .wapper nav ul li a p:before {
@@ -186,10 +182,28 @@ header .wapper nav ul li a p:before {
           transform: scaleX(0);
   -webkit-transform-origin: left top;
           transform-origin: left top;
-  -webkit-transition: 0.3s cubic-bezier(0.19, 0.77, 0.28, 0.9);
-  transition: 0.3s cubic-bezier(0.19, 0.77, 0.28, 0.9);
+  -webkit-transition: 0.2s cubic-bezier(0.19, 0.77, 0.28, 0.9);
+  transition: 0.2s cubic-bezier(0.19, 0.77, 0.28, 0.9);
 }
 
+/* 宣告 */
+html {
+  font-size: 62.5%;
+}
+
+@media (max-width: 1440px) {
+  html {
+    font-size: 53.57%;
+  }
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 35.71%;
+  }
+}
+
+/* 樣式 */
 main {
   height: calc(100vh - 72px);
   width: 100vw;
@@ -197,7 +211,7 @@ main {
 
 main .slideMask {
   position: fixed;
-  z-index: 1;
+  z-index: -1;
 }
 
 main .swiper-container {
@@ -207,6 +221,7 @@ main .swiper-container {
 
 main .swiper-container .swiper-slide {
   overflow: hidden;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -216,10 +231,10 @@ main .swiper-container .swiper-slide {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
 }
 
 main .swiper-container .swiper-slide .subnav_container {
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -233,21 +248,32 @@ main .swiper-container .swiper-slide .subnav_container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 3;
 }
 
-main .swiper-container .swiper-slide .subnav_container .textbox_container {
-  z-index: 5;
-  width: 520px;
+main .swiper-container .swiper-slide .subnav_container .textbox {
+  width: calc(520px + 35px * 2);
   position: relative;
+  z-index: 4;
 }
 
-main .swiper-container .swiper-slide .subnav_container .textbox_container .subnav_wapper {
-  position: absolute;
-  top: -635px;
-  left: 0;
+@media (max-width: 1440px) {
+  main .swiper-container .swiper-slide .subnav_container .textbox {
+    width: calc(360px + 35px * 2);
+  }
+}
+
+@media (max-width: 1024px) {
+  main .swiper-container .swiper-slide .subnav_container .textbox {
+    width: calc(250px + 35px * 2);
+  }
+}
+
+main .swiper-container .swiper-slide .subnav_container .textbox .subnav_wapper {
   height: 600px;
-  width: 520px;
+  width: calc(520px + 35px * 2);
+  position: absolute;
+  top: calc((600px + 35px) * -1);
+  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -263,7 +289,24 @@ main .swiper-container .swiper-slide .subnav_container .textbox_container .subna
           align-items: stretch;
 }
 
-main .swiper-container .swiper-slide .subnav_container .textbox_container .subnav_wapper .subnav {
+@media (max-width: 1440px) {
+  main .swiper-container .swiper-slide .subnav_container .textbox .subnav_wapper {
+    height: 416px;
+    width: calc(360px + 35px * 2);
+    top: calc((416px + 35px) * -1);
+  }
+}
+
+@media (max-width: 1024px) {
+  main .swiper-container .swiper-slide .subnav_container .textbox .subnav_wapper {
+    height: 289px;
+    width: calc(250px + 35px * 2);
+    top: calc((289px + 35px) * -1);
+  }
+}
+
+main .swiper-container .swiper-slide .subnav_container .textbox .subnav_wapper .subnav {
+  padding: 35px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -277,64 +320,70 @@ main .swiper-container .swiper-slide .subnav_container .textbox_container .subna
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 
-main .swiper-container .swiper-slide .subnav_container .textbox_container .subnav_wapper .subnav .wapper {
-  margin-bottom: 30px;
+main .swiper-container .swiper-slide .subnav_container .textbox .subnav_wapper .subnav .wapper {
+  margin-bottom: 35px;
 }
 
-main .swiper-container .swiper-slide .subnav_container .textbox_container .subnav_wapper .subnav .wapper h5 {
-  color: #ffffff;
+@media (max-width: 1024px) {
+  main .swiper-container .swiper-slide .subnav_container .textbox .subnav_wapper .subnav .wapper {
+    margin-bottom: 15px;
+  }
+}
+
+main .swiper-container .swiper-slide .subnav_container .textbox .subnav_wapper .subnav .wapper h5 {
+  padding-left: 1.204em;
+  font-weight: 300;
   letter-spacing: 0.43em;
-  padding-left: 1.25em;
+  color: #ffffff;
   -webkit-transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
   transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
 }
 
-main .swiper-container .swiper-slide .subnav_container .textbox_container .subnav_wapper .subnav .wapper .hover_h5 {
-  padding-left: 1.7em;
+main .swiper-container .swiper-slide .subnav_container .textbox .subnav_wapper .subnav .wapper h5.hover {
+  padding-left: 1.76em;
 }
 
-main .swiper-container .swiper-slide .subnav_container .textbox_container .subnav_wapper .subnav .wapper h2 {
-  color: #ffffff;
-  letter-spacing: 0.43em;
+main .swiper-container .swiper-slide .subnav_container .textbox .subnav_wapper .subnav .wapper h2 {
   padding-left: 0.43em;
+  letter-spacing: 0.43em;
+  text-align: center;
+  color: #ffffff;
   -webkit-transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
   transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
 }
 
-main .swiper-container .swiper-slide .subnav_container .textbox_container .subnav_wapper .subnav .wapper .hover_h2 {
+main .swiper-container .swiper-slide .subnav_container .textbox .subnav_wapper .subnav .wapper h2.hover {
   letter-spacing: 0.63em;
   padding-left: 0.63em;
 }
 
-main .swiper-container .swiper-slide .subnav_container .textbox_container .subnav_wapper .subnav p {
-  color: #ffffff;
-  letter-spacing: 6px;
+main .swiper-container .swiper-slide .subnav_container .textbox .subnav_wapper .subnav p {
   padding-left: 6px;
+  letter-spacing: 6px;
+  color: #ffffff;
   position: relative;
 }
 
-main .swiper-container .swiper-slide .subnav_container .textbox_container .subnav_wapper .subnav p:before {
+main .swiper-container .swiper-slide .subnav_container .textbox .subnav_wapper .subnav p:before {
   content: "";
-  position: absolute;
-  width: 100%;
   height: 2px;
+  width: 100%;
+  background: #ffffff;
+  opacity: 0.3;
+  position: absolute;
   bottom: -7px;
   left: 0;
-  background: #ffffff;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
   -webkit-transform-origin: left top;
           transform-origin: left top;
   -webkit-transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
   transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
-  opacity: 0.3;
 }
 
-main .swiper-container .swiper-slide .subnav_container .textbox_container .subnav_wapper .subnav .hover:before {
+main .swiper-container .swiper-slide .subnav_container .textbox .subnav_wapper .subnav p.hover:before {
   -webkit-transform-origin: right top;
           transform-origin: right top;
   -webkit-transform: scale(1);
@@ -346,34 +395,34 @@ main .swiper-container .swiper-slide .subnav_container .sixAngle {
   width: 520px;
   -webkit-clip-path: url(#pc);
           clip-path: url(#pc);
-  z-index: 6;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
+  z-index: 3;
 }
 
 @media (max-width: 1440px) {
   main .swiper-container .swiper-slide .subnav_container .sixAngle {
-    -webkit-clip-path: url(#pc-small);
-            clip-path: url(#pc-small);
     height: 416px;
     width: 360px;
+    -webkit-clip-path: url(#pc-small);
+            clip-path: url(#pc-small);
   }
 }
 
 @media (max-width: 1024px) {
   main .swiper-container .swiper-slide .subnav_container .sixAngle {
-    -webkit-clip-path: url(#laptop);
-            clip-path: url(#laptop);
     height: 289px;
     width: 250px;
+    -webkit-clip-path: url(#laptop);
+            clip-path: url(#laptop);
   }
 }
 
 main .swiper-container .swiper-slide .subnav_container .sixAngle .sixAngle_background {
   height: calc(100vh - 72px);
   width: 100vw;
+  background-image: url("https://placem.at/place?w=1920&h=1080&txt=0");
   -webkit-filter: brightness(1.1);
           filter: brightness(1.1);
-  background-image: url("https://placem.at/place?w=1920&h=1080&txt=0");
   position: absolute;
   top: 0;
   left: 0;
@@ -383,27 +432,25 @@ main .swiper-container .swiper-slide .subnav_container .sixAngle .sixAngle_backg
   transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
 }
 
-main .swiper-container .swiper-slide .subnav_container .sixAngle .hover {
+main .swiper-container .swiper-slide .subnav_container .sixAngle .sixAngle_background.hover {
   -webkit-transform: scale(1.15, 1.15);
           transform: scale(1.15, 1.15);
 }
 
-main .swiper-container .swiper-slide .subnav_background {
+main .swiper-container .swiper-slide > .background {
   height: 100%;
   width: 100%;
   background-image: url("https://placem.at/place?w=1920&h=1080&txt=0");
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
+  z-index: 1;
   -webkit-transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
   transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
 }
 
-main .swiper-container .swiper-slide .hover {
+main .swiper-container .swiper-slide > .background.hover {
   -webkit-transform: scale(1.15, 1.15);
           transform: scale(1.15, 1.15);
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=home.css.map */

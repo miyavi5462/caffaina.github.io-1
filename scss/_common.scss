@@ -1,0 +1,102 @@
+// z-index 下拉選單 1000 / fixed 1030 / 彈窗
+$hidden: -1;
+$header: 1030;
+
+// 親密性
+$space-medium: 35px;
+$space-small: 15px;
+$space-x-small: 5px;
+$space-large: 60px;
+$space-X-large: 160px;
+
+//media
+@mixin pc-small {
+    @media (max-width: 1440px) {
+        @content;
+    }
+}
+@mixin laptop {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin pad {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 320px) {
+        @content;
+    }
+}
+
+/* reset */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; //設定回歸到10px（原本是16px，乘以62.5%後就為10px）
+}
+
+body {
+    font-family: "Noto Serif TC", "Noto Sans TC", serif, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.75;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+// h1~h6,p
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0;
+}
+
+h1 {
+    font-size: 8rem;
+}
+h2 {
+    font-size: 5.6rem;
+}
+h3 {
+    font-size: 4.8rem;
+}
+h4 {
+    font-size: 3.2rem;
+}
+h5 {
+    font-size: 2rem;
+}
+h6 {
+    font-size: 1.4rem;
+}
+
+b {
+    font-weight: 500;
+}
+
+p {
+    margin: 0;
+    font-family: "Noto Sans TC", sans-serif;
+}

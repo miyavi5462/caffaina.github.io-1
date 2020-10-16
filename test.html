@@ -1,57 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
-    rel="stylesheet">
   <style>
-    body {
-      height: 100vh;
-      width: 100vw;
-      margin: 0;
-    }
-
-    .sixAngle {
-      height: 520px;
-      width: 600px;
-      clip-path: url(#slideMask);
-      position: relative;
-    }
-
-    .background {
-
-
-      background-image: url("https://placem.at/place?w=1920&h=1080&txt=0");
-      background-position: center;
-      width: 100vw;
-      height: 100vh;
-
-      transform: scale(1.2, 1.2);
-
-      position: fixed;
-      left: 50%;
-      top: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
+    .box.color{
+      height: 100px;
+      width: 100px;
+      background-color: black;
     }
   </style>
 </head>
-
 <body>
-  <svg width="0" height="0" class="slideMask" version="1.1" xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink">
-    <clipPath id="slideMask">
-      <path fill="none"
-        d="M519.61523,450V150L259.80762,0,0,150V450L259.80762,600ZM48.49744,422V178L259.80762,56,471.11786,178V422L259.80762,544Z">
-      </path>
-    </clipPath>
-  </svg>
-  <div class="sixAngle">
-    <div class="background"></div>
-  </div>
+  <div class="box color"></div>
+  <div class="box"></div>
+  <div class="color"></div>
 </body>
-
 </html>

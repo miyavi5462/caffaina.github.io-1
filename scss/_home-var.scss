@@ -1,0 +1,15 @@
+/* 宣告 */
+// pc
+$pc-height: 600px;
+$pc-width: 520px;
+
+// pc-small
+$pc-small-height: 416px;
+$pc-small-width: 360px;
+
+//laptop
+$laptop-height: 289px;
+$laptop-width: 250px;
+
+// z-index 小 → 大
+$elements: swiper-slide-background, subnav_container, sixAngle, textbox;
